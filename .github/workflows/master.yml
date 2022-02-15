@@ -23,5 +23,5 @@ jobs:
         with:
           context: .
           push: true
-          tags: antyung88/doom:latest
+          tags: antyung88/docker-game-doom/doom:latest
 #          labels: ${{ steps.meta.outputs.labels }}
