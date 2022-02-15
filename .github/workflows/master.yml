@@ -23,5 +23,5 @@ jobs:
         with:
           context: .
           tags: |
-            ghcr.io/${{ secrets.GH_USERNAME }}/<IMAGE_NAME>
+            ghcr.io/${{ secrets.GH_USERNAME }}/docker-game-doom/doom
           push: ${{ github.ref == 'refs/heads/main' }}
