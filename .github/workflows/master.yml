@@ -28,12 +28,6 @@ jobs:
         uses: docker/build-push-action@ad44023a93711e3deb337508980b4b5e9bcdc5dc
         with:
           context: .
-<<<<<<< HEAD
           push: true
 #          tags: ${{ steps.meta.outputs.tags }}
 #          labels: ${{ steps.meta.outputs.labels }}
-=======
-          tags: |
-            ghcr.io/${{ secrets.GH_USERNAME }}/docker-game-doom/doom
-          push: ${{ github.ref == 'refs/heads/main' }}
->>>>>>> 6d9aea48af2f325eb449a001ace7bba559b52dfa
