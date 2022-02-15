@@ -1,6 +1,6 @@
 version: '3.3'
 services:
   doom:
-    image: dev852com/doom:latest
+    image: ghcr.io/antyung88/doom:master
     ports: 
       - "8000:8000"
