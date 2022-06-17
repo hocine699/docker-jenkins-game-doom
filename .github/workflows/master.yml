@@ -1,9 +1,7 @@
-name: Github Packages CI
+name: Release Github Packages
 
 on:
   push:
-    branches: [ master ]
-  pull_request:
     branches: [ master ]
 
 jobs:
@@ -18,17 +16,11 @@ jobs:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GH_TOKEN }}
-
       - name: Extract metadata (tags, labels) for Docker
         id: meta
-        uses: docker/metadata-action@98669ae865ea3cffbcbaa878cf57c20bbf1c6c38
+        uses: docker/metadata-action@97c170d70b5f8bfc77e6b23e68381f217cb64ded
         with:
-          images: ghcr.io/antyung88/doom
-
-      - name: Build and push Docker image
-        uses: docker/build-push-action@ad44023a93711e3deb337508980b4b5e9bcdc5dc
-        with:
-          context: .
-          push: true
-          tags: ${{ steps.meta.outputs.tags }}
-          labels: ${{ steps.meta.outputs.labels }}
+          images: ghcr.io/${{ github.actor }}/${{ secrets.image }}
+      - run: |
+          docker build . -t ghcr.io/${{ github.actor}}/${{ secrets.image }}:latest
+          docker push ghcr.io/${{ github.actor}}/${{ secrets.image }}:latest
