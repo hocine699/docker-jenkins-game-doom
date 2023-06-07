@@ -9,8 +9,8 @@ node{
         app = docker.build("mowqa/doom")
     }
     stage ('Push Image') {
-        withDockerRegistry([ credentitialsID: "DockerHubID", url: "https://hub.docker.com" ]) {
-            app.push()
+        sh 'docker login -u mowqa -p dckr_pat_is0y3bHt8AoE6BLlA7sv3NaKJMI'
+        sh 'docker push mowqa/doom'
         }
     }
     
