@@ -5,10 +5,10 @@ node{
         checkout scm
     }
     
-    stage 'Build Image' {
+    stage ('Build Image') {
         app = docker.build("doom")
     }
-    stage 'Run Docker'{
+    stage ('Run Docker') {
         docker.image('doom').withRun('-p 8000:8000')
     }
 }
