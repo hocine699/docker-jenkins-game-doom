@@ -9,7 +9,7 @@ node{
         app = docker.build("mowqa/doom")
     }
     stage ('Push Image') {
-        withDockerRegistry([ credentitialsID: "DockerHubID" ]) {
+        withDockerRegistry([ credentitialsID: "DockerHubID", url: "" ]) {
             dockerImage.push()
         }
     }
