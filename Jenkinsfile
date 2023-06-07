@@ -6,9 +6,9 @@ node{
     }
     
     stage 'Build Image' {
-        sh 'docker build -t doom . '
+        app = docker.build("doom")
     }
     stage 'Run Docker'{
-        sh 'docker run -d -p 8000:8000 --name doom doom'
+        docker.image('doom').withRun('-p 8000:8000')
     }
 }
