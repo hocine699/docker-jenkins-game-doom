@@ -9,7 +9,7 @@ node{
         app = docker.build("doom:$BUILD_NUMBER")
     }
     stage ('Run Docker') {
-        sh 'docker run -d -p 8000:8000 --name doom$BUILD_NUMBER doom:$BUILD_NUMBER'
+        sh 'docker run -d -p 8000:8000 doom:$BUILD_NUMBER'
     }
     
 }
