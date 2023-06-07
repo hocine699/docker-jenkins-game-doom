@@ -9,6 +9,6 @@ node{
         app = docker.build("doom")
     }
     stage ('Run Docker') {
-        docker.image('doom').withRun('-p 8000:8000')
+        sh 'docker run -d -p 8000:8000 --name doom doom:latest'
     }
 }
