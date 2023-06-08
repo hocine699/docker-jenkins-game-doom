@@ -9,5 +9,5 @@ node{
         sh 'docker login -u hocinho699 -p dckr_pat_RKE9TZX584T4KyDMfqmQSssLP6Y'
         sh 'docker push hocinho699/doom'
     }   
-    sshPublisher(publishers: [sshPublisherDesc(configName: 'vmcible', transfers: [sshTransfer(cleanRemote: false, excludes: '', execCommand: 'sh /home/azureuser/script.sh', execTimeout: 120000, flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: '[, ]+', remoteDirectory: '/home/azureuser', remoteDirectorySDF: false, removePrefix: '', sourceFiles: 'script.sh')], usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: false)])
+    sshPublisher(publishers: [sshPublisherDesc(configName: 'vmcible', transfers: [sshTransfer(cleanRemote: false, excludes: '', execCommand: 'sh /home/azureuser/deploy.sh', execTimeout: 120000, flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: '[, ]+', remoteDirectory: '/home/azureuser', remoteDirectorySDF: false, removePrefix: '', sourceFiles: 'deploy.sh')], usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: false)])
 }    
